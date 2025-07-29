@@ -1,12 +1,12 @@
-# 🧹 data_cleaning_script_v1.2.0
+# data_cleaning_script_v1.2.0
 
 This repository contains the **first iteration of a data scraping and cleaning script** for collecting structured data from the [Charities Portal (charities.gov.sg)](https://www.charities.gov.sg) — Singapore’s public registry of charities and fundraising events.
 
-## 📌 Purpose
+## Purpose
 
 The goal of this project is to automate the extraction of **charity and fundraising-related data** to support **outreach efforts**, research, and transparency. This data will be used to better understand the landscape of registered charities in Singapore.
 
-## 🕸️ What It Does
+## What It Does
 
 - Uses **Scrapy** and **Playwright** to scrape JavaScript-rendered pages from the Charities Portal.
 - Targets data such as:
@@ -14,14 +14,14 @@ The goal of this project is to automate the extraction of **charity and fundrais
   - Fundraising campaign information
   - Sector and classification of charities
 
-## 🔧 Tech Stack
+## Tech Stack
 
 - [Scrapy](https://scrapy.org/) – for building the scraping logic.
 - [Scrapy-Playwright](https://github.com/scrapy-plugins/scrapy-playwright) – for scraping pages that require JavaScript rendering.
 - [GitHub Codespaces](https://github.com/features/codespaces) – for a portable dev environment.
 - Python 3.11
 
-## 🚀 Getting Started
+## Getting Started
 
 This project uses a **pre-configured dev container**, so setup is fast and reproducible in GitHub Codespaces.
 
@@ -36,9 +36,9 @@ cd myproject
 scrapy crawl example
 ```
 
-The spider will visit JavaScript-enabled pages and extract charity quotes as a sample.
+The spider will visit JavaScript-enabled pages and extract charity profiles as a sample.
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 .
@@ -51,7 +51,7 @@ The spider will visit JavaScript-enabled pages and extract charity quotes as a s
 └── README.md              # You're here!
 ```
 
-## 📈 Roadmap
+## Roadmap
 
 - [ ] Replace sample spider with one tailored to charities.gov.sg
 - [ ] Implement data cleaning pipeline
@@ -59,9 +59,9 @@ The spider will visit JavaScript-enabled pages and extract charity quotes as a s
 - [ ] Add data validation checks
 - [ ] Explore scheduling with cron or GitHub Actions
 
-## 🤝 Contributing
+## Contributing
 
-This is an early-stage project. Contributions and suggestions are welcome!
+This is an early-stage project. Suggestions are welcome!
 
 ---
 
