@@ -1,0 +1,18 @@
+{
+  "name": "scrapy-playwright-env",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "postCreateCommand": "pip install scrapy scrapy-playwright && playwright install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
+}
