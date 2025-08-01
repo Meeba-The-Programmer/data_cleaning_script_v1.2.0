@@ -49,6 +49,7 @@ class CharityProfileSpider(scrapy.Spider):
             
     # function to extract relevant org profile data from charity page  
     def parse_charity_profile(self, response):
+        # add logic to include "No record found" text for fields that have no data
         yield {
             "uen": response.css('//*[@id="tabProfile"]/div[1]/div[1]/p::text').get(),
             "contact_person": response.css('//*[@id="tabProfile"]/div[1]/div[2]/p::text').get(),
