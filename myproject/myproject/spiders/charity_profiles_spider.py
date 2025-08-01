@@ -75,7 +75,7 @@ class CharityProfileSpider(scrapy.Spider):
         }
 
 
-        # helper function to extract data from tables with pagination support
+        # helper function to extract data from tables
         def extract_table_data(self, response, table_id):
             table_data = [] # storing extract table data in this list
             rows = response.css('//*[@id="table_id"]/tbody/tr')
@@ -86,10 +86,22 @@ class CharityProfileSpider(scrapy.Spider):
                     table_data.append("No records found") # can be dealt with in pipelines.py
                     break
                 else:
-                    # check for pagination
+                    if table_id != '#tblPatrons':
+                        table_data.append({
+                            'full_name': cells[2].strip(),
+                            'designation': cells[3].strip(),
+
+                        })
+                    else:
+                        table_data.append({
+                            'salutations': cells[2].strip(),
+                            'full_name': cells[3].strip(),
+
+                        })
+                        
+                    
 
 
 
-            pass
 
 
