@@ -47,8 +47,7 @@ class CharityProfileSpider(scrapy.Spider):
                 callback=self.parse_charity_profile
             )
             
-    # function to extract relevant org profile data from charity page
-    # issue: need Playwright to help wait for the page to load the data    
+    # function to extract relevant org profile data from charity page  
     def parse_charity_profile(self, response):
         yield {
             "uen": response.css('//*[@id="tabProfile"]/div[1]/div[1]/p::text').get(),
@@ -76,20 +75,21 @@ class CharityProfileSpider(scrapy.Spider):
         }
 
 
-        # issue: dealing with tables with pagination for patrons, board members & key officers
+        # helper function to extract data from tables with pagination support
         def extract_table_data(self, response, table_id):
             table_data = [] # storing extract table data in this list
             rows = response.css('//*[@id="table_id"]/tbody/tr')
             # both key officers and governing board members table have a similar schema - extract Full Name & Designation
-            # patrons just need to extract their full names
+            # patrons, if not empty - extract Salutation and Full Name
             for row in rows:
                 if row.css('td.dataTables_empty'):
-                    continue
+                    table_data.append("No records found") # can be dealt with in pipelines.py
+                    break
                 else:
+                    # check for pagination
+
+
 
             pass
 
-        # likely we need to check if pagination is present
-        # if pagination is present in the table, we would need to fetch the links - do note the href uses # which is likely JS
-        # extract table information - I would like to extract table by table to avoid clashing info
-        # skip table if no records found
+
